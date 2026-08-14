@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import ReactMarkdown from 'react-markdown';
+import Lanyard from './components/Lanyard/Lanyard';
 import './styles.css';
 
 const chapters = [
@@ -55,21 +56,6 @@ function App() {
     return () => { alive = false; };
   }, [selected, tab]);
 
-  const gitAscii = `
-      ██████╗ ██╗████████╗
-     ██╔════╝ ██║╚══██╔══╝
-     ██║  ███╗██║   ██║   
-     ██║   ██║██║   ██║   
-     ╚██████╔╝██║   ██║   
-      ╚═════╝ ╚═╝   ╚═╝   
-  ┌──────────────────────────────┐
-  │  * main ────────●────────●  │
-  │   \\            /          │
-  │    ●────●──────●            │
-  │         \\                  │
-  │          ●── feature/ui     │
-  └──────────────────────────────┘`;
-
   return (
     <div className="app-shell">
       <header className="topbar">
@@ -88,9 +74,10 @@ function App() {
           <p>A single practical manual for the commands, mental models and recovery moves you actually need at the terminal.</p>
           <div className="hero-command"><TerminalPrompt>git log --oneline --graph --decorate</TerminalPrompt></div>
         </div>
-        <div className="hero-art" aria-label="ASCII Git artwork">
-          <pre>{gitAscii}</pre>
-          <div className="hero-art-caption">ASCII / commits / branches / ship</div>
+        <div className="hero-art hero-lanyard" aria-label="Interactive 3D Git lanyard">
+          <div className="lanyard-label">INTERACTIVE BADGE · DRAG TO SWING</div>
+          <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
+          <div className="hero-art-caption">REACT BITS / PHYSICS / THREE.JS</div>
         </div>
       </section>
 
