@@ -10,11 +10,20 @@
 └──────────────────────────────────────────────────────────────┘
 ```
 
+## The website
+
+The manual is now compiled into a single React + Vite reader with a terminal-style UI.
+
+```bash
+npm install
+npm run dev
+```
+
+The site provides searchable chapter navigation, Markdown chapters loaded from the repository, terminal-style code blocks and commit-graph visuals, a responsive layout, and a research tab with curated Git/GitHub references.
+
 ## Why this exists
 
 This is a compact Git manual built for real work rather than memorizing every corner of Git.
-
-The goal is simple:
 
 ```bash
 $ git status
@@ -50,7 +59,6 @@ Then go deeper when the situation actually requires it.
 
   working tree  ──git add──>  staging area  ──commit──>  repository
        │                            │                        │
-       │                            │                        │
        └──────────── restore ───────┘                        │
                                                             │
                                               push / fetch  │
@@ -79,22 +87,6 @@ git commit -m "Describe the change"
 git push
 ```
 
-## Quick start
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
-
-git init
-
-git remote add origin <repository-url>
-git branch -M main
-
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
 ## Working principle
 
 > **Inspect first. Change second. Commit deliberately.**
@@ -107,21 +99,20 @@ git log --oneline --decorate --graph -10
 git branch --show-current
 ```
 
-## Suggested learning path
+## Research pass
+
+See [`research/GITHUB-MANUALS.md`](research/GITHUB-MANUALS.md) for the Git/GitHub references reviewed while shaping the site, including Pro Git, Git reference docs, GitHub's Git guides and cheat sheet, and Learn Git Branching.
+
+## Learning path
 
 ```text
 STATUS → COMMIT → BRANCH → REMOTE → MERGE → UNDO → REBASE → DEBUG
 ```
 
----
-
-### Terminal aesthetic
-
-All detailed chapters use shell-style examples, compact explanations, and scenario-driven guidance.
-
 ```text
 $ cd git-manual
-$ less 01-basics/README.md
+$ npm install
+$ npm run dev
 $ echo "learn by doing"
 learn by doing
 ```
