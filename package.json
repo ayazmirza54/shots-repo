@@ -9,11 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "latest",
+    "@react-three/fiber": "latest",
+    "@react-three/rapier": "latest",
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
+    "meshline": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-markdown": "latest"
+    "react-markdown": "latest",
+    "three": "latest",
+    "vite": "latest"
   },
   "devDependencies": {}
 }
