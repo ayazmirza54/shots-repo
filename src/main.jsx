@@ -55,6 +55,21 @@ function App() {
     return () => { alive = false; };
   }, [selected, tab]);
 
+  const gitAscii = `
+      ██████╗ ██╗████████╗
+     ██╔════╝ ██║╚══██╔══╝
+     ██║  ███╗██║   ██║   
+     ██║   ██║██║   ██║   
+     ╚██████╔╝██║   ██║   
+      ╚═════╝ ╚═╝   ╚═╝   
+  ┌──────────────────────────────┐
+  │  * main ────────●────────●  │
+  │   \\            /          │
+  │    ●────●──────●            │
+  │         \\                  │
+  │          ●── feature/ui     │
+  └──────────────────────────────┘`;
+
   return (
     <div className="app-shell">
       <header className="topbar">
@@ -71,13 +86,11 @@ function App() {
           <div className="eyebrow">TERMINAL-FIRST · ENGINEERING REFERENCE</div>
           <h1>Git without the noise.</h1>
           <p>A single practical manual for the commands, mental models and recovery moves you actually need at the terminal.</p>
+          <div className="hero-command"><TerminalPrompt>git log --oneline --graph --decorate</TerminalPrompt></div>
         </div>
-        <div className="hero-terminal">
-          <div><TerminalPrompt>git status</TerminalPrompt></div>
-          <div className="muted">On branch <span className="accent">main</span></div>
-          <div className="muted">nothing to commit, working tree clean</div>
-          <div><TerminalPrompt>git log --oneline --graph --all</TerminalPrompt></div>
-          <div className="graph">* a81d2f1 feat: ship manual<br/>|\<br/>| * 4c02a91 docs: add scenarios<br/>|/<br/>* 13fb8de chore: init</div>
+        <div className="hero-art" aria-label="ASCII Git artwork">
+          <pre>{gitAscii}</pre>
+          <div className="hero-art-caption">ASCII / commits / branches / ship</div>
         </div>
       </section>
 
